@@ -11,7 +11,7 @@ st.markdown("##")
 # 2. Load Data
 @st.cache_data
 def get_data():
-    df = pd.read_csv("ecommerce_raw_data")
+    df = pd.read_csv("ecommerce_raw_data.csv")
     # specific cleanup if needed
     df["Total_Sales"] = df["Unit_Price"] * df["Quantity"]
     return df
@@ -89,3 +89,4 @@ right_column.plotly_chart(fig_daily_sales, use_container_width=True)
 # 6. Raw Data (Optional view)
 if st.checkbox("Show Raw Data"):
     st.dataframe(df_selection)
+
